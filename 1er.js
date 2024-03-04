@@ -1,90 +1,50 @@
-// Esperar a que el documento esté cargado
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtener referencias a los elementos del formulario
+    const nameInput = document.getElementById('name');
+    const lastNameInput = document.getElementsByName('name')[1]; // Obtener el segundo input con name 'name'
+    const submitButton = document.querySelector('input[type="submit"]');
+    const importanceYesRadio = document.getElementById('importance_si');
+    const checkboxContainer = document.getElementById('checkbox-container');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('pwd');
+    const confirmPasswordInput = document.getElementsByName('pwd')[1]; // Obtener el segundo input con name 'pwd'
 
-    // Función para mostrar alerta con nombre en mayúsculas al perder el foco
-    document.getElementById("name").addEventListener("blur", function() {
-        mostrarAlert(this.value.toUpperCase());
+    // Validación al perder el foco del campo nombre
+    nameInput.addEventListener('blur', function () {
+        alert("EN MAYUSCULA SOSTENIDA");
     });
 
-    // Función para activar el botón Enviar después de ingresar el Apellido
-    document.getElementById("apellidos").addEventListener("input", function() {
-        activarBoton();
+    // Activar el botón Enviar al ingresar el apellido
+    lastNameInput.addEventListener('input', function () {
+        submitButton.disabled = false;
     });
 
-    // Función para mostrar/ocultar checkbox al seleccionar Sí/No
-    var importanceYes = document.getElementById("importance_si");
-    var checkboxContainer = document.getElementById("checkboxContainer");
-
-    importanceYes.addEventListener("change", function() {
-        if (this.checked) {
-            checkboxContainer.style.display = "block";
+    // Mostrar u ocultar checkboxes según la selección de Sí/No
+    importanceYesRadio.addEventListener('change', function () {
+        if (importanceYesRadio.checked) {
+            checkboxContainer.style.display = 'block';
+        } else {
+            checkboxContainer.style.display = 'none';
         }
     });
 
-    document.getElementById("importance_no").addEventListener("change", function() {
-        if (this.checked) {
-            checkboxContainer.style.display = "none";
+    // Validar que el campo de email contenga el símbolo @
+    emailInput.addEventListener('input', function () {
+        if (!emailInput.value.includes('@')) {
+            alert('El campo de email debe contener "@"');
         }
     });
 
-    // Función para exigir que se agregue "@" al campo de Email
-    document.getElementById("email").addEventListener("input", function() {
-        validarEmail();
+    // Validar la igualdad de contraseñas al perder el foco del campo confirmar contraseña
+    confirmPasswordInput.addEventListener('blur', function () {
+        if (passwordInput.value === confirmPasswordInput.value) {
+            // Contraseñas iguales, resaltar con verde
+            passwordInput.style.border = '2px solid green';
+            confirmPasswordInput.style.border = '2px solid green';
+        } else {
+            // Contraseñas diferentes, resaltar con rojo
+            passwordInput.style.border = '2px solid red';
+            confirmPasswordInput.style.border = '2px solid red';
+        }
     });
-
-    // Función para verificar si las contraseñas coinciden y resaltar campos
-    var passwordInput = document.getElementById("pwd");
-    var confirmPasswordInput = document.getElementById("confirmPwd");
-
-    passwordInput.addEventListener("input", function() {
-        validarContraseñas();
-    });
-
-    confirmPasswordInput.addEventListener("input", function() {
-        validarContraseñas();
-    });
-
 });
-
-// Función para mostrar alerta con nombre en mayúsculas sostenida
-function mostrarAlert(nombre) {
-    alert(nombre);
-}
-
-// Función para activar el botón Enviar después de ingresar el Apellido
-function activarBoton() {
-    var apellidosInput = document.getElementById("apellidos");
-    var submitButton = document.getElementById("submitButton");
-
-    if (apellidosInput.value.trim() !== "") {
-        submitButton.disabled = false;
-    } else {
-        submitButton.disabled = true;
-    }
-}
-
-// Función para exigir que se agregue "@" al campo de Email
-function validarEmail() {
-    var emailInput = document.getElementById("email");
-    var submitButton = document.getElementById("submitButton");
-
-    if (emailInput.value.includes("@")) {
-        submitButton.disabled = false;
-    } else {
-        submitButton.disabled = true;
-    }
-}
-
-// Función para verificar si las contraseñas coinciden y resaltar campos
-function validarContraseñas() {
-    var passwordInput = document.getElementById("pwd");
-    var confirmPasswordInput = document.getElementById("confirmPwd");
-
-    if (passwordInput.value === confirmPasswordInput.value) {
-        passwordInput.style.borderColor = "green";
-        confirmPasswordInput.style.borderColor = "green";
-    } else {
-        passwordInput.style.borderColor = "red";
-        confirmPasswordInput.style.borderColor = "red";
-    }
-}
