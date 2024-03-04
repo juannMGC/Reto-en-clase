@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
         checkboxContainer.style.display = importanceNoRadio.checked ? 'none' : 'block';
     });
     
-
     // Validar que el campo de email contenga el símbolo @
     emailInput.addEventListener('input', function () {
         if (!emailInput.value.includes('@')) {
