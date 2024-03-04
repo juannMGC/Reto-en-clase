@@ -25,7 +25,7 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-
+/* RESPONISVE */
 /* Estilos para pantallas medianas */
 @media (max-width: 768px) {
     body {
@@ -36,7 +36,7 @@ body {
         width: 90%;
     }
 }
-
+/* RESPONISVE */
 /* Estilos para pantallas pequeñas */
 @media (max-width: 480px) {
     body {
