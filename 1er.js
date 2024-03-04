@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const lastNameInput = document.getElementsByName('name')[1]; // Obtener el segundo input con name 'name'
     const submitButton = document.querySelector('input[type="submit"]');
     const importanceYesRadio = document.getElementById('importance_si');
+    const importanceNoRadio = document.getElementById('importance_no');
     const checkboxContainer = document.getElementById('checkbox-container');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('pwd');
@@ -19,10 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.disabled = false;
     });
 
-    // Mostrar u ocultar checkboxes según la selección de Sí/No
+    // Mostrar/ocultar checkboxes según la selección de Sí/No
     importanceYesRadio.addEventListener('change', function () {
         checkboxContainer.style.display = importanceYesRadio.checked ? 'block' : 'none';
     });
+    importanceNoRadio.addEventListener('change', function () {
+        checkboxContainer.style.display = importanceNoRadio.checked ? 'none' : 'block';
+    });
+    
 
     // Validar que el campo de email contenga el símbolo @
     emailInput.addEventListener('input', function () {
