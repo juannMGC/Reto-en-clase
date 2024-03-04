@@ -16,11 +16,21 @@
             <label for="name">¿Cuales son tus apellidos? </label><br>
             <input type="text" id="name" name="name" placeholder="apellidos" required><br><br>
 
-            <label for="importance">¿Desea resgistrarse en el concurso?</label><br>
+            <label for="importance">¿Desea registrarse en el concurso?</label><br>
             <input type="radio" id="importance_si" name="importance" value="Si" required>
             <label for="importance_si">Sí</label><br>
             <input type="radio" id="importance_no" name="importance" value="No" required>
             <label for="importance_no">No</label><br><br>
+
+            <div id="checkbox-container" style="display: none;">
+                <!-- Checkbox 1 -->
+                <input type="checkbox" id="checkbox1" name="checkbox1">
+                <label for="checkbox1">Modalidad 1</label><br>
+    
+                <!-- Checkbox 2 -->
+                <input type="checkbox" id="checkbox2" name="checkbox2">
+                <label for="checkbox2">Modalidad 2</label><br>
+            </div>
 
             <label for="email">Email</label><br>
             <input type="email" id="email" name="email" required><br><br>
