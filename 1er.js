@@ -21,11 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mostrar u ocultar checkboxes según la selección de Sí/No
     importanceYesRadio.addEventListener('change', function () {
-        if (importanceYesRadio.checked) {
-            checkboxContainer.style.display = 'block';
-        } else {
-            checkboxContainer.style.display = 'none';
-        }
+        checkboxContainer.style.display = importanceYesRadio.checked ? 'block' : 'none';
     });
 
     // Validar que el campo de email contenga el símbolo @
