@@ -8,36 +8,41 @@
     <link rel="stylesheet" href="./1er.css" />
 </head>
 <body>
-            <div class="abs-center"></div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-            <form action="/submit_survey" method="post">
-                <label for="name">¿Cual es tu nombre? </label><br>
-                <input type="text" id="name" name="name" placeholder="Tu nombre" required><br><br>
+    <div class="abs-center">
+        <form action="/submit_survey" method="post">
+            <label for="name">¿Cual es tu nombre? </label><br>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required><br><br>
 
-                <label for="name">¿Cuales son tus apellidos? </label><br>
-                <input type="text" id="name" name="name" placeholder="apellidos" required><br><br>
+            <label for="name">¿Cuales son tus apellidos? </label><br>
+            <input type="text" id="name" name="name" placeholder="apellidos" required><br><br>
 
-                <label for="importance">¿Desea resgistrarse en el concurso?</label><br>
-                <input type="radio" id="importance_si" name="importance" value="Si" required>
-                <label for="importance_si">Sí</label><br>
+            <label for="importance">¿Desea resgistrarse en el concurso?</label><br>
+            <input type="radio" id="importance_si" name="importance" value="Si" required>
+            <label for="importance_si">Sí</label><br>
 
-                <input type="radio" id="importance_no" name="importance" value="No" required>
-                <label for="importance_no">No</label><br>
+            <label for="importance">¿Desea resgistrarse en el concurso?</label><br>
+            <input type="radio" id="importance_si" name="importance" value="Si" required>
+            <label for="importance_si">Sí</label><br>
 
-                <label for="email">Email</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                
-                <label for="awareness_date">Fecha de nacimiento</label><br>
-                <input type="date" id="awareness_date" name="awareness_date" required><br><br>
-                
-                <label for="pwd">Contraseña</label>
-                <input type="password" id="pwd" name="pwd"><br><br>
-                
-                <label for="pwd">Confrimar Contraseña</label>
-                <input type="password" id="pwd" name="pwd"><br><br>
+            <input type="radio" id="importance_no" name="importance" value="No" required>
+            <label for="importance_no">No</label><br>
 
-                <input type="submit" value="Enviar">
-            </form>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="awareness_date">Fecha de nacimiento</label><br>
+            <input type="date" id="awareness_date" name="awareness_date" required><br><br>
+            
+            <label for="pwd">Contraseña</label>
+            <input type="password" id="pwd" name="pwd"><br><br>
+            
+            <label for="pwd">Confirmar Contraseña</label>
+            <input type="password" id="pwd" name="pwd"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>
