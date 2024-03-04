@@ -13,3 +13,35 @@ input[type="submit"] {
     color: white; /* Text color on the button */
 }
 
+/* RESPONISVE */
+/* Estilos generales para pantallas grandes */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilos para pantallas medianas */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+
