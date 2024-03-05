@@ -52,6 +52,7 @@ function registro2() {
             </div>`;
     }
 }
+
 function validar() {
     let pass1 = document.getElementById('password');
     let pass2 = document.getElementById('password1');
