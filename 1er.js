@@ -1,7 +1,7 @@
 function convertir() {
     let nombre = document.getElementById('nombre').value;
     let nombre_mayus = nombre.toUpperCase();
-    alert(nombre_mayus);
+    alert("MAYUSCULA SOSTENIDA");
 }
 
 function actboton() {
@@ -35,9 +35,11 @@ function validar() {
     if (pass1.value != pass2.value) {
         pass1.style.borderColor = 'red';
         pass2.style.borderColor = 'red';
+        alert("CONTRASEÑAS INCORRECTAS");
     } else {
         pass1.style.borderColor = 'green';
         pass2.style.borderColor = 'green';
+        alert("CONTRASEÑAS CORRECTAS");
     }
 }
 
