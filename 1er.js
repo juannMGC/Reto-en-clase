@@ -41,3 +41,15 @@ function validar() {
     }
 }
 
+function validarEmail(email) {
+    let emailInput = document.getElementById('email');
+    if (!email.includes('@')) {
+        alert('El campo de email debe contener "@"');
+        emailInput.value = "";  // Limpiar el campo en caso de error
+    }
+}
+
+function enviarFormulario() {
+    // Agrega aquí la lógica para enviar el formulario si todas las validaciones son exitosas.
+    alert('Formulario enviado con éxito!');
+}
