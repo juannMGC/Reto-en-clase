@@ -11,8 +11,11 @@ function actboton() {
 
 function registro() {
     let registro = document.getElementById('radio1');
+    let radio2 = document.getElementById('radio2');
     let div_registro = document.getElementById('si_registro');
-
+    if (radio2.checked){
+        radio2.checked = false;
+    }
     if (registro.checked) {
         div_registro.innerHTML = `
             <div class="form-check">
@@ -31,7 +34,10 @@ function registro() {
 function registro2() {
     let registro2 = document.getElementById('radio2');
     let div_registro = document.getElementById('si_registro');
-
+    let radio1 = document.getElementById('radio1');
+    if (radio1.checked){
+        radio1.checked = false;
+    }
     if (registro2.checked) {
         div_registro.innerHTML = "";
     } else {
@@ -46,7 +52,6 @@ function registro2() {
             </div>`;
     }
 }
-
 function validar() {
     let pass1 = document.getElementById('password');
     let pass2 = document.getElementById('password1');
