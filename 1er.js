@@ -33,17 +33,17 @@ function registro2() {
     let div_registro = document.getElementById('si_registro');
 
     if (registro2.checked) {
-        div_registro.innerHTML ="";
+        div_registro.innerHTML = "";
     } else {
-        div_registro.innerHTML =  `
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">Modalidad 1</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-            <label class="form-check-label" for="flexCheckChecked">Modalidad 2</label>
-        </div>`;
+        div_registro.innerHTML = `
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">Modalidad 1</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">Modalidad 2</label>
+            </div>`;
     }
 }
 
@@ -54,11 +54,9 @@ function validar() {
     if (pass1.value != pass2.value) {
         pass1.style.borderColor = 'red';
         pass2.style.borderColor = 'red';
-        alert("CONTRASEÑAS INCORRECTAS");
     } else {
         pass1.style.borderColor = 'green';
-        pass2.style.borderColor = 'green';
-        alert("CONTRASEÑAS CORRECTAS");
+        pass2.style.borderColor = 'green';    
     }
 }
 
