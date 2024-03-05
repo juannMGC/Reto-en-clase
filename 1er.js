@@ -28,6 +28,25 @@ function registro() {
     }
 }
 
+function registro2() {
+    let registro2 = document.getElementById('radio2');
+    let div_registro = document.getElementById('si_registro');
+
+    if (registro2.checked) {
+        div_registro.innerHTML ="";
+    } else {
+        div_registro.innerHTML =  `
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Modalidad 1</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">Modalidad 2</label>
+        </div>`;
+    }
+}
+
 function validar() {
     let pass1 = document.getElementById('password');
     let pass2 = document.getElementById('password1');
