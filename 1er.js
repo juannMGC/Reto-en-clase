@@ -1,50 +1,43 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Obtener referencias a los elementos del formulario
-    const nameInput = document.getElementById('name');
-    const lastNameInput = document.getElementsByName('name')[1]; // Obtener el segundo input con name 'name'
-    const submitButton = document.querySelector('input[type="submit"]');
-    const importanceYesRadio = document.getElementById('importance_si');
-    const importanceNoRadio = document.getElementById('importance_no');
-    const checkboxContainer = document.getElementById('checkbox-container');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('pwd');
-    const confirmPasswordInput = document.getElementsByName('pwd')[1]; // Obtener el segundo input con name 'pwd'
+function convertir() {
+    let nombre = document.getElementById('nombre').value;
+    let nombre_mayus = nombre.toUpperCase();
+    alert(nombre_mayus);
+}
 
-    // Validación al perder el foco del campo nombre
-    nameInput.addEventListener('blur', function () {
-        alert("EN MAYUSCULA SOSTENIDA");
-    });
+function actboton() {
+    let boton = document.getElementById('boton');
+    boton.disabled = false;
+}
 
-    // Activar el botón Enviar al ingresar el apellido
-    lastNameInput.addEventListener('input', function () {
-        submitButton.disabled = false;
-    });
+function registro() {
+    let registro = document.getElementById('radio1');
+    let div_registro = document.getElementById('si_registro');
 
-    // Mostrar/ocultar checkboxes según la selección de Sí/No
-    importanceYesRadio.addEventListener('change', function () {
-        checkboxContainer.style.display = importanceYesRadio.checked ? 'block' : 'none';
-    });
-    importanceNoRadio.addEventListener('change', function () {
-        checkboxContainer.style.display = importanceNoRadio.checked ? 'none' : 'block';
-    });
-    
-    // Validar que el campo de email contenga el símbolo @
-    emailInput.addEventListener('input', function () {
-        if (!emailInput.value.includes('@')) {
-            alert('El campo de email debe contener "@"');
-        }
-    });
+    if (registro.checked) {
+        div_registro.innerHTML = `
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">Modalidad 1</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <label class="form-check-label" for="flexCheckChecked">Modalidad 2</label>
+            </div>`;
+    } else {
+        div_registro.innerHTML = "";
+    }
+}
 
-    // Validar la igualdad de contraseñas al perder el foco del campo confirmar contraseña
-    confirmPasswordInput.addEventListener('blur', function () {
-        if (passwordInput.value === confirmPasswordInput.value) {
-            // Contraseñas iguales, resaltar con verde
-            passwordInput.style.border = '2px solid green';
-            confirmPasswordInput.style.border = '2px solid green';
-        } else {
-            // Contraseñas diferentes, resaltar con rojo
-            passwordInput.style.border = '2px solid red';
-            confirmPasswordInput.style.border = '2px solid red';
-        }
-    });
-});
+function validar() {
+    let pass1 = document.getElementById('password');
+    let pass2 = document.getElementById('password1');
+
+    if (pass1.value != pass2.value) {
+        pass1.style.borderColor = 'red';
+        pass2.style.borderColor = 'red';
+    } else {
+        pass1.style.borderColor = 'green';
+        pass2.style.borderColor = 'green';
+    }
+}
+
